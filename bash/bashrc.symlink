@@ -1,0 +1,123 @@
+#!/bin/sh
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# Enable color support. No if-guards: fail noisily, bitte.
+source $HOME/.bash/color-enable
+
+# Get color definitions
+source $HOME/.bash/color-definitions
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+
+# Set the prompt. If the color variables aren't set, it won't affect
+# anything.
+if [ "$UID" = 0 ]; then
+    # Root prompt: user@host:working/dir#
+    PS1="\[${Red}\]\u@\h:\[${Blue}\]\w\[${Red}\]# \[${Reset}\]"
+    PS2="\[${Red}\]> \[${Reset}\]"
+else
+    # user@host working/dir
+    # hh:mm:ss $
+    PS1="\[${BIYellow}\]\n\u@\h \[${BIBlue}\]\w
+\[${BIBlue}\]\$(__git_ps1)\[${BIYellow}\] \$\[${Reset}\] "
+    export PS2="\[${BIYellow}\]> \[${Reset}\]"
+fi
+
+# History options: No duplicate lines, 
+export HISTCONTROL=ignoreboth # a.k.a. ignordups:ignorespace
+shopt -s histappend           # Append, don't overwrite
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# Set the path. Mac gets the MacPorts paths added, too.
+if [[ $OSTYPE =~ darwin.* ]]; then
+    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+else
+    export PATH=$PATH:/var/lib/gems/1.8/bin
+fi
+export PATH=$HOME/dotfiles/bin:$PATH
+export PATH=/home/sietse/context/tex/texmf-linux-64/bin:$PATH
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ]; then
+    source /etc/bash_completion
+    bind 'TAB:menu-complete'
+fi
+
+export R_PDFLATEXCMD=pdflatex
+export OSFONTDIR="/usr/share/fonts;$HOME/.fonts"
+export TERM="xterm-color"
+
+# Autocomplete for the cheat program
+function complete_cheat {
+  COMPREPLY=()
+  if [ $COMP_CWORD = 1 ]; then
+    local sheets=`cheat sheets | grep '^  '`
+    COMPREPLY=(`compgen -W "$sheets" -- $2`)
+  fi
+}
+complete -F complete_cheat cheat
+
+EDITOR=vim
+set -o vi
+
+# Helper function to show git branch in prompt
+function parse_git_branch {
+  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
+  echo "("${ref#refs/heads/}")"
+}
+
+export GREP_OPTIONS="-n --color"
+export LS_OPTIONS="--color=auto -h"
+alias ls="ls \$LS_OPTIONS"
+alias ll="ls -la \$LS_OPTIONS"
+
+function hunt {
+    find ./ -name "*$**"
+}
+function grepp {
+    grep -R $* *
+}
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/dev
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
+
+source $HOME/dotfiles/git/aliases.zsh
+
+################################################
+# MM-Pro-specific
+function mmp {
+    case "$1" in 
+        .5  | 03 | webserver03 | fedora)
+            ssh root@fedora.mm-pro.nl
+            ;;
+        .9  | 01 | webserver01)
+            ssh root@webserver01.mm-pro.nl -p 11022
+            ;;
+        .13 | 02 | webserver02)
+            ssh root@webserver02.mm-pro.nl -p 11022
+            ;;
+        z.23 | zelastic)
+            ssh zadmin@192.168.1.23 -p 22
+            ;;
+        .23 | elastic)
+            ssh sietse@192.168.1.23 -p 22
+            ;;
+        *)
+            # anything else: show usage
+            type mmp | grep ')$\|ssh [a-z]\+@.*$' | sed 's/^[0-9]*://'
+    esac
+}

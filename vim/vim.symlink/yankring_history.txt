@@ -1,0 +1,100 @@
+e,v
+l,v
+i,v
+f,v
+_,v
+y,v
+m,v
+            let g:yankring_history_file = 'my_yankring_history_file',V
+let g:,V
+            let g:yankring_history_dir = '$VIM',V
+",v
+"",V
+" ----------------------------,V
+Edit vimrc file,v
+s,v
+x,v
+.,v
+,V
+" ----------------------------" Yankring options,V
+        four,V
+        three,V
+        two,V
+        one,V
+jkl,V
+sietse,v
+google.com,v
+----------------------------,v
+noremap X "_x    "Delete without updating clipboard or yank buffer,V
+/,v
+home,v
+htdocs,v
+dev,v
+storage,v
+ ,v
+#,v
+/usr/share/doc/lighttpd-doc/simple-vhost.txt ,v
+## mod_status generates the status overview of the webserver.#### Documentation: /usr/share/doc/lighttpd-doc/status.txt##      http://trac.lighttpd.net/trac/wiki/Docs%3AModStatusserver.modules += ( "mod_status" )## relative URL which is used to retrieve the status-pagestatus.status-url = "/server-status"## relative URL for the config page which displays the loaded modules# status.config-url = "/server-config"## relative URL for a plain-text page containing the internal statistics# status.statistics-url = "/server-statistics"## add JavaScript which allows client-side sorting for the connection overview## default: enable# status.enable-sort = "disable",v
+## mod_status generates the status overview of the webserver.#### Documentation: /usr/share/doc/lighttpd-doc/status.txt##      http://trac.lighttpd.net/trac/wiki/Docs%3AModStatusserver.modules += ( "mod_status" )## relative URL which is used to retrieve the status-pagestatus.status-url = "/server-status"## relative URL for the config page which displays the loaded modules# status.config-url = "/server-config"## relative URL for a plain-text page containing the internal statistics# status.statistics-url = "/server-statistics"## add JavaScript which allows client-side sorting for the connection overview## default: enable# status.enable-sort = "disable",V
+ #del is shorter as rmtrash, or simply use rmtrash directly,v
+rmtrash,v
+for ,v
+name ,v
+path ,v
+full ,v
+d,v
+alias rm='nocorrect rm -i' # --interactive (because --no-clobber fails silently),V
+\relative c ,v
+alias rm="echo Use del, or full path name for rm"alias del="rmtrash" #del is shorter as rmtrash, or simply use rmtrash directly,v
+    git clone ssh://sietse@collegiummusicum.nl:19360/hok/sietse/kerstzingcie/site.git kerstsite,v
+    git clone ssh://sietse@collegiummusicum.nl:19360/hok/sietse/kerstzingcie/site.git kerstsite,V
+    git clone ssh://sietse@collegiummusicum.nl/hok/sietse/kerstzingcie/site.git kerstsite,v
+    git clone ssh://sietse@collegiummusicum.nl/hok/sietse/kerstzingcie/site.git kerstsite,V
+>,v
+<b d' ,v
+<d' g' ,v
+',v
+g,v
+b,v
+<,v
+],v
+),v
+8,v
+c,v
+[,v
+(,v
+ __,v
+~,v
+4,v
+a,v
+  Hoor de eng,V
+  Hoor de eng’ -- len zing -- en d’eer __  van de nieuw ge -- bo -- ren Heer!,V
+   "1. Hoor" de "eng'" len zin --    gen "d'eer " __ kind van Beth -- le -- hem \skip4 \skip4 \skip4    \skip4 \skip4 \skip4 \skip4 \skip4 \skip4 \skip4 \skip4 \skip4    \skip4 \skip4 ,v
+verseOneAlto = \lyricmode {}verseOneTenor = \lyricmode {}verseOneBass = \lyricmode {},V
+Soprano ,v
+v,v
+    Rakefile,V
+pep8.py --show-source --show-pep8,v
+mv,v
+alias mv='nocorrect mv -i' # --interactive (because --no-clobber fails silently),V
+, Rakefil,v
+    kerstsite,V
+-,v
+specification.,V
+.. vim: filetype=rst:,v
+index.htmlpics,v
+index.htmlpics,V
+`,v
+*,v
+has,v
+all everything,v
+.. vim: filetype=rst:,V
+  * touching-slim,V
+`touching-slim` was created by mucking about with `touching`.,v
+Various,v
+Various static site designs:,v
+A bunch of designs: ,v
+index.htmlpics,V
+"Touching" and "touching-slim" served as the bas,v
+Touching,v
+zenlike.zip,V

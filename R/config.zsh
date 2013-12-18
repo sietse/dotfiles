@@ -1,0 +1,1 @@
+export R_PDFLATEXCMD=pdflatex

@@ -1,0 +1,14 @@
+\registerctxluafile{inrange}{1.001}
+
+\def\inrange
+   {\dodoublegroupempty\doinrange}
+
+% #dummy gobbles spaces; EOL comment tells TeX not to expect spaces
+\def\doinrange#text#right#dummy[#labels]% do not remove this comment
+   {\iffirstargument
+      {#text }%%
+    \fi
+    \ctxlua{userdata.inrange("#labels")}%%
+    \ifsecondargument
+      {#right}%%
+    \fi}

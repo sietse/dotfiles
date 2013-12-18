@@ -1,0 +1,19 @@
+% ls-R -- filename database for kpathsea; do not change this line.
+./:
+.:
+context-envs
+.env_pink.tex.un~
+ls-R
+
+./context-envs:
+env_always.tex
+.env_always.tex.un~
+env_commentedcode.tex
+.env_commentedcode.tex.un~
+env_font.tex
+.env_font.tex.un~
+env_r_sietse.tex
+env_r.tex
+env_tall.tex
+.env_tall.tex.un~
+

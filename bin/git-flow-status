@@ -1,0 +1,24 @@
+init() {
+  require_git_repo
+  require_gitflow_initialized
+  gitflow_load_settings
+  PREFIX=$(git config --get gitflow.prefix.feature)
+}
+
+usage() {
+	echo "usage: git flow status [list] [-v]"
+	echo "       git flow feature start [-F] <name> [<base>]"
+	echo "       git flow feature finish [-rFkDS] [<name|nameprefix>]"
+	echo "       git flow feature publish <name>"
+	echo "       git flow feature track <name>"
+	echo "       git flow feature diff [<name|nameprefix>]"
+	echo "       git flow feature rebase [-i] [<name|nameprefix>]"
+	echo "       git flow feature checkout [<name|nameprefix>]"
+	echo "       git flow feature pull [-r] <remote> [<name>]"
+}
+
+cmd_default() {
+	# * list all feature branches + last worked on
+    # * last release tag
+    # * list open release branches: "You are finishing the xxx release
+}

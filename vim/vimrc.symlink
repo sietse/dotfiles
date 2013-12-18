@@ -1,0 +1,90 @@
+set nocompatible
+
+let mapleader = ","                 " set before sourcing shortcuts
+
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+filetype plugin indent on
+
+
+if has('win16') || has('win32') || has('win64') || has('win95')
+    source $HOME/vimfiles/visual.vim
+    source $HOME/vimfiles/shortcuts.vim
+else
+    source $HOME/.vim/visual.vim
+    source $HOME/.vim/shortcuts.vim
+endif
+
+
+" Search options
+nmap L :nohl<Return>
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+
+" Remember the undo tree
+if has('persistent undo')
+    set undofile
+    set undodir=~/.vimundo
+endif
+
+" " remember where we were
+" "  '10  :  marks will be remembered for up to 10 previously edited files
+" "  "100 :  will save up to 100 lines for each register
+" "  :20  :  up to 20 lines of command-line history will be remembered
+" "  %    :  saves and restores the buffer list
+" "  n... :  where to save the viminfo files
+" set viminfo='10,\"100,:20,%,n~/.viminfo
+
+
+" In many terminal emulators the mouse works just fine, so enable it.
+set mouse=a
+
+set modeline
+
+syntax on
+syn sync fromstart
+syn sync minlines=200
+
+" ============================
+" Plugin options
+" ============================
+
+" ----------------------------
+" YankRing options
+" ----------------------------
+let g:yankring_history_dir = '$HOME/.vim'
+let g:yankring_history_file = 'yankring_history'
+let g:yankring_min_element_length = 2
+let g:yankring_clipboard_monitor = 1
+
+" ----------------------------
+" NERDcommenter options
+" ----------------------------
+let NERDSpaceDelims=1
+
+" ----------------------------
+" Yankstack options
+" ----------------------------
+" nmap <C-p> <Plug>yankstack_substitute_older_paste 
+" nmap <C-n> <Plug>yankstack_substitute_newer_paste
+
+" ----------------------------
+" ArgumentRewrap options
+" ----------------------------
+nnoremap <silent> <leader>r :call argumentrewrap#RewrapArguments()<CR>
+
+" ----------------------------
+" Learning VimScript exercises
+" ----------------------------
+
+" Move current line up/down
+nnoremap <leader>_ ddkP
+nnoremap <leader>- ddp
+
+" Swap files go in ~/tmp
+" set directory=$HOME/tmp
+

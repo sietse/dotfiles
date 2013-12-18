@@ -1,0 +1,15 @@
+options( help_type = "html" )
+options( browser = "opera" )
+options( tikzMetricsDictionary = "/home/sietse/.R/tikzMetricsDictionary" )
+options( repos = "http://cran-mirror.cs.uu.nl" )
+options( R2WinBUGS.bugs.directory = "/home/sietse/.wine/c_drive/bin/WinBUGS14/")
+#library( Defaults )
+#setDefaults(help.search, agrep=FALSE)
+
+bioconductor <- function() { source("~/bin/biocLite.R") }
+
+.Last <- function() {
+    if(interactive()) {
+        try(savehistory("~/.Rhistory"))
+    }
+}

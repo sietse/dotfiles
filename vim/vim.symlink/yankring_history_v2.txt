@@ -1,0 +1,100 @@
+<<<<<<< HEADpysqlite=======,v
+alias gp='git push origin HEAD',V
+>>>>>>> Add tests,V
+<<<<<<< HEADpysqlite=======,V
+<<<<<<< HEADgrowstat/tests.py=======>>>>>>> Add tests,V
+<<<<<<< HEAD,V
+=======        ```sh        git clone https://github.com/nihlaeth/GrowStat.git        pip install ./GrowStat        cd Growstat        pserve development.ini        ```        If this doesn't work, create a clean virtualenv (`virtualenv myenv        --no-site-packages`), and try installing GrowStat there and running it.        If that also fails, the build is broken; please inform the developer.                To access growstat, direct your browser to 127.0.0.1:8080 if you're accessing it locally or hostname:8080 if you are connecting remotely.>>>>>>> Add tests,V
+rm -fr /home/sietse/proj/GrowStat/.git/rebase-apply,v
+=======        ```sh        git clone https://github.com/nihlaeth/GrowStat.git        pip install ./GrowStat        cd Growstat        pserve development.ini        ```        If this doesn't work, create a clean virtualenv (`virtualenv myenv        --no-site-packages`), and try installing GrowStat there and running it.        If that also fails, the build is broken; please inform the developer.                To access growstat, direct your browser to 127.0.0.1:8080 if you're accessing it locally or hostname:8080 if you are connecting remotely.,V
+	rm -fr /home/sietse/proj/GrowStat/.git/rebase-apply,v
+what pages do.,v
+For further ,v
+    config.add_route('editsupply','/edit/supply/{id}')    config.add_route('editcolumn','/edit/supply/{id}')    config.add_route('editslot','/edit/slot/{id}')    config.add_route('editplant','/edit/plant/{id}')    config.add_route('editwatering','/edit/watering/{id}')    config.add_route('editwater','/edit/water/{id}')    config.add_route('editnutrients','/edit/nutrients/{id}')    config.add_route('editph','/edit/ph/{id}')    config.add_route('editec','/edit/ec/{id}')    config.add_route('edittemp','/edit/temp/{id}')    config.add_route('edithumidity','/edit/humidity/{id}')    config.add_route('editlength','/edit/length/{id}')    config.add_route('editharvest','/edit/harvest/{id}')    config.add_route('editpic','/edit/picture/{id}')    config.add_route('editlog','/edit/log/{id}'),V
+them?,v
+the ,v
+            '/record/temp',,V
+pages,v
+        if len(failed_pages) > 0:            raise Exception("These pages didn't load:\n    " +                "\n    ".join(failed_pages)),V
+            '/timeline',,V
+routes',v
+##,V
+      #,v
+        for fp_i in failed_pages:            print(fp_i),V
+            else:                pass,V
+    ,v
+,,V
+routes,v
+    def test_root(self):    def test_water(self):        res = self.testapp.get('/record/water', status=200),V
+        res = self.testapp.get('/', status=200),V
+    def test_routes(self):,V
+    def test_pages(self):        for page_i in self.pages:,V
+    def test_root(self):        res = self.testapp.get('/', status=200)    def test_water(self):        res = self.testapp.get('/record/water', status=200),V
+                                                                                                                                                                                                ,12
+['/list','/timeline','/add/supply','/add/column','/add/slot','/add/plant','/record/watering','/record/water','/record/nutrients','/record/ph','/record/ec','/record/temp','/record/humidity','/record/height','/record/harvest','/record/picture','/record/log',],V
+    def,V
+        for,V
+    config.add_route('list','/list')    config.add_route('timeline', '/timeline')    config.add_route('addsupply', '/add/supply')    config.add_route('addcolumn', '/add/column')    config.add_route('addslot','/add/slot')    config.add_route('addplant','/add/plant')    config.add_route('watering','/record/watering')    config.add_route('water','/record/water')    config.add_route('nutrients','/record/nutrients')    config.add_route('ph','/record/ph')    config.add_route('ec','/record/ec')    config.add_route('temp','/record/temp')    config.add_route('humidity','/record/humidity')    config.add_route('height','/record/height')    config.add_route('harvest','/record/harvest')    config.add_route('pic','/record/picture')    config.add_route('log','/record/log'),V
+            assert False,V
+        except:,V
+        try:,V
+import unittest,V
+import unittestfrom pyramid import testingclass ViewTests(unittest.TestCase):    def setUp(self):        self.config = testing.setUp()    def tearDown(self):        testing.tearDown()    def test_my_view(self):        from .views import my_view        request = testing.DummyRequest()        info = my_view(request)        self.assertEqual(info['project'], 'GrowStat'),V
+asdf asdf asdf,v
+Functional,v
+            ,V
+asdf,v
+warning: no files found matching '*.rst'warning: no files found matching '*.jpg' under directory 'growstat'warning: no files found matching '*.txt' under directory 'growstat'warning: no files found matching '*.mak' under directory 'growstat'warning: no files found matching '*.js' under directory 'growstat'warning: no files found matching '*.html' under directory 'growstat'warning: no files found matching '*.xml' under directory 'growstat',v
+True,v
+return,v
+False,v
+else,v
+fail,v
+unittest,v
+Improve installation instructions,v
+21640,v
+growstat,v
+    def test_water(self):        res = self.testapp.get('/record/water', status=200),V
+root,v
+    def test_root(self):        res = self.testapp.get('/', status=200),V
+        # self.failUnless('PH' in res.body),V
+to ,v
+browser ,v
+your ,v
+direct ,v
+, ,v
+GrowStat,v
+access ,v
+To ,v
+ Growstat,v
+ GrowStat,v
+# ,V
+('editable') ,v
+cd Growstat,V
+python setup.py develop   # put this dev directory in python path,v
+tell python to get growstat from dev dir,v
+n ,v
+ive ,v
+have them appear,v
+8080,v
+This,V
+To access growstat, direct your browser to 127.0.0.1:8080 if you're accessing it locally or hostname:8080 if you are connecting remotely.,V
+puts dev directory in path,v
+current ,v
+elopment,v
+development,v
+links the current directory,v
+python se,V
+pip install ./GrowStat,v
+```shgit clone https://github.com/nihlaeth/GrowStat.gitpip install ./GrowStatcd Growstatpserve development.ini,V
+modules in ,v
+    # elkaar geplakt.,V
+    # automatisch aan,V
+en zonder comma ertussen worden,v
+dezelfde,v
+mooi,v
+heel ,v
+    # I'd want a two-line lambda ideally,V
+but,v
+lambdas get annoying,v
+This is really a mapping,v
