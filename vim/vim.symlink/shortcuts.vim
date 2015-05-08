@@ -10,6 +10,20 @@ noremap ^ g^
 inoremap <Up> <C-O>gk
 inoremap <Down> <C-O>gj
 
+" make it easy to add empty lines
+nnoremap go o<Esc>
+nnoremap gO O<Esc>
+
+" make it easy to copy-paste with the X clipboard
+nnoremap Y "+y
+nnoremap YY "+yy
+nnoremap YP "+p
+
+vnoremap Y "+y
+vnoremap YY "+y
+vnoremap YP "+p
+
+
 " Terminal passes <S-Space> as <Space>. If there's no PgUp, it's not
 " worth letting <Space> be PgDn.
 nnoremap <Space> <nop>
